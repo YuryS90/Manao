@@ -9,7 +9,7 @@ class XML
     //3. сохранить данные в файл
 
     protected $data;
-    
+
     public function readFile($fileName)
     {
         preg_match_all(

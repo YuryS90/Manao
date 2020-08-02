@@ -8,7 +8,6 @@ class XMLTable extends XML
 {
     protected $errors = [];
 
-
     // Метод, котоый будет добвлять но с проверкой. Мы его просто перезагружаем.  Для того чтобы добавить проверку
     public function addData($login, $pass, $email, $name)
     {
@@ -48,15 +47,21 @@ class XMLTable extends XML
         return $errors;
     }
 
-
     public function checkUser($login, $password)
     {
 
         foreach ($this->data as $value) {
             if ($value['login'] == $login && $value['password'] == $password) {
-                return true;
+                $_SESSION['logged_user'] = $login;
+                $_SESSION['logged_password'] = $password;
+                
+                header("location: hello.php");
+            }
+            else {
+                $this->errors[] = "Неверный логин либо пароль";
             }
         }
-        return false;
+        // return false;
+        
     }
 }
