@@ -8,7 +8,10 @@ class XMLTable extends XML
 {
     protected $errors = [];
 
-    // Метод, котоый будет добвлять но с проверкой. Мы его просто перезагружаем.  Для того чтобы добавить проверку
+    /**
+     * Добавление нового пользователя с проверкой на ошибки.
+     * Если ошибок нет, то пользователь добавлен, иначе ошибки записываются в массив ошибок
+     */
     public function addData($login, $pass, $email, $name)
     {
         if (!$this->existenceValue('login', $login)) {
@@ -39,7 +42,9 @@ class XMLTable extends XML
         return false;
     }
 
-    // возвращает ошибки (тому кто спросит) и потом их стирает
+    /**
+     * получение массива с ошибками
+     */
     public function getErrors()
     {
         $errors = $this->errors;
@@ -47,6 +52,11 @@ class XMLTable extends XML
         return $errors;
     }
 
+    /**
+     * Проверяем есть ли такой пользователь в базе данных.
+     * Если есть, то авторизируем и перенаправляем на hello.php
+     * Если такой пользователь не найден, то записываем ошибку в массив ошибок
+     */
     public function checkUser($login, $password)
     {
 

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'vendor/autoload.php';
+include 'src/core/auth.php';
 ?>
 
 <!doctype html>
@@ -19,18 +20,20 @@ include 'vendor/autoload.php';
 <body>
 
     <div class="container">
-
+  
         <div class="main">
+
+            <div><a href="index.php">Вернуться на главную страницу</a></div>
             <h2 class="login">Авторизация</h2>
 
             <div class="form">
                 <form action="?" method="POST">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">login</label>
+                        <p>login</p>
                         <input type="text" name="login" placeholder="введите ваш login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <p>Password</p>
                         <input placeholder="введите ваш пароль" type="password" name="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <button type="submit" name="auth" class="btn btn-outline-dark">Отправить</button>
@@ -38,9 +41,7 @@ include 'vendor/autoload.php';
             </div>
         </div>
 
-        <?php
-        include 'src/core/auth.php';
-        ?>
+      
 
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
