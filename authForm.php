@@ -1,9 +1,7 @@
 <?php
 session_start();
 include 'vendor/autoload.php';
-include 'src/core/auth.php';
 ?>
-
 
 <!doctype html>
 <html lang="ru">
@@ -13,33 +11,9 @@ include 'src/core/auth.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Авторизация</title>
-    <style>
-        .login {
-            width: 100%;
-            text-align: center;
-        }
 
-        .container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    <link rel="stylesheet" href="css/style.css">
 
-        .main {
-            width: 25%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .errors {
-            color: red;
-        }
-    </style>
 </head>
 
 <body>
@@ -65,7 +39,7 @@ include 'src/core/auth.php';
         </div>
 
         <?php
-
+        include 'src/core/auth.php';
         ?>
 
     </div>

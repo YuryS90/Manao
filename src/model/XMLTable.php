@@ -28,13 +28,13 @@ class XMLTable extends XML
                         $this->errors[] = "Поле с паролем не должно быть пустым!";
                     }
                 } else {
-                    $this->errors[] = "Поле с логином не должно быть пустым!";
+                    $this->errors[] = "Поле с логином не должно быть пустым!!";
                 }
             } else {
-                $this->errors[] = "Такой email существует";
+                $this->errors[] = "Такой email существует!";
             }
         } else {
-            $this->errors[] = "Такой логин существует";
+            $this->errors[] = "Такой логин существует!";
         }
         return false;
     }
@@ -58,10 +58,8 @@ class XMLTable extends XML
                 header("location: hello.php");
             }
             else {
-                $this->errors[] = "Неверный логин либо пароль";
+                $this->errors[] = "Неверный логин либо пароль!";
             }
         }
-        // return false;
-        
     }
 }
