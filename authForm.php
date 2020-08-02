@@ -4,7 +4,6 @@ include 'vendor/autoload.php';
 include 'src/core/auth.php';
 ?>
 
-
 <!doctype html>
 <html lang="ru">
 
@@ -13,50 +12,28 @@ include 'src/core/auth.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Авторизация</title>
-    <style>
-        .login {
-            width: 100%;
-            text-align: center;
-        }
 
-        .container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    <link rel="stylesheet" href="css/style.css">
 
-        .main {
-            width: 25%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .errors {
-            color: red;
-        }
-    </style>
 </head>
 
 <body>
 
     <div class="container">
-
+  
         <div class="main">
+
+            <div><a href="index.php">Вернуться на главную страницу</a></div>
             <h2 class="login">Авторизация</h2>
 
             <div class="form">
                 <form action="?" method="POST">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">login</label>
+                        <p>login</p>
                         <input type="text" name="login" placeholder="введите ваш login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <p>Password</p>
                         <input placeholder="введите ваш пароль" type="password" name="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <button type="submit" name="auth" class="btn btn-outline-dark">Отправить</button>
@@ -64,9 +41,7 @@ include 'src/core/auth.php';
             </div>
         </div>
 
-        <?php
-
-        ?>
+      
 
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

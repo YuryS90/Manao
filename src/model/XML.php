@@ -10,6 +10,9 @@ class XML
 
     protected $data;
 
+    /**
+     * Чтение базы данных
+     */
     public function readFile($fileName)
     {
         preg_match_all(
@@ -18,38 +21,40 @@ class XML
             file_get_contents($fileName), // читаем из файла .xml строку
             $arr_tags
         ); // вытаскиваем данные из xml-тегов
-        // print_r($arr_tags);
         $this->data = [];
 
-        foreach ($arr_tags[1] as $key => $value) {  // формируем
+        // Формируем удобный массив пользователей
+        foreach ($arr_tags[1] as $key => $value) { 
             $this->data[$key]['login'] = $value;
             $this->data[$key]['password'] = $arr_tags[2][$key];
             $this->data[$key]['email'] = $arr_tags[3][$key];
             $this->data[$key]['name'] = $arr_tags[4][$key];
         }
-        // print_r($this->data);
         return $this;
     }
 
-    // делаем метод чтобы возврашщал data
+    /**
+     * Метод возвращения массива пользователей
+     */
     public function getData(): array
     {
         return $this->data;
     }
 
+    /**
+     * Добавление нового пользователя в массив пользователей
+     */
     public function addData($login, $pass, $email, $name)
     {
-        //чтобы посмотреть как выглядит массив (ключ-значение), и узнать каким образом добавить
-        // print_r($this->data);
-
         $this->data[] = ['login' => $login, 'password' => $pass, 'email' => $email, 'name' => $name];
-
 
         return $this;
     }
 
 
-    // преобразуем массив в Xml строку 
+    /**
+     * Преобразовываем массив пользователей в xml строку
+     * и записываем ее в файл БД */ 
     public function saveFile($fileName)
     {
         if (!empty($this->data)) {
@@ -68,7 +73,9 @@ class XML
     }
 
 
-    // есть ли такое значение  value в столбце field
+    /**
+     * Проверка введенных значений из формы с такими же значениями в БД
+     */
     protected function existenceValue($field, $value): bool
     {
         return in_array($value, array_column($this->data, $field));

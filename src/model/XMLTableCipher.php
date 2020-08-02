@@ -8,7 +8,7 @@ use Config\Config;
 class XMLTableCipher extends XMLTable
 {
     /**
-     * Зашифровал пароль при добавлении
+     * Шифруем пароль при добавлении в БД
      */
     public function addData($login, $pass, $email, $name)
     {
@@ -21,7 +21,7 @@ class XMLTableCipher extends XMLTable
     }
 
     /**
-     * Проверил, что такой зашифрованный пароль есть в базе
+     * Шифруем введенный пароль и сверяем его с паролем из БД
      */
     public function checkUser($login, $password)
     {

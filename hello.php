@@ -5,3 +5,4 @@ session_start();
 ?>
 
 <h1>Welcom, <?=$_SESSION['logged_user']?>!</h1>
+<div><a href="index.php">Вернуться на главную страницу</a></div>
